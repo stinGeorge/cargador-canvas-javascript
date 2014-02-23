@@ -1,7 +1,21 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+/* paleta
+f0f0f0 gris claro
+f9f5c8 amarillo pastel
+5b5b5b gris intermedio
+d7545c rojo pardo
+94b0a4 verde pastel
+44817a verde musgo
+*/
 *{
    padding: 0;
    margin: 0;
+}
+a{
+   background: #d7545c;
+   color: #f9f5c8;
+   display: block;
+   padding: 1em;
 }
 body{
    background: #5b5b5b;
@@ -11,16 +25,21 @@ body{
 body > div{
    margin: 0 auto;
    padding: 1em;
+   overflow: hidden;
    text-align: center;
-   width: 980px;
+   max-width: 980px;
 }
 h1{
    color: #f0f0f0;   
    padding: 1em auto;
    margin: 1em auto;
 }
+h2{
+   color: #f9f5c8;
+}
 canvas{
    background: #94b0a4;
-   display: block;
+   display: inline-block;
    margin: 0 auto;
+   vertical-align: middle;
 }
