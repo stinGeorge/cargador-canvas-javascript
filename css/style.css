@@ -38,6 +38,7 @@ h2{
    color: #f9f5c8;
 }
 canvas{
+   background: #44817a;
    display: inline-block;
    margin: 0 auto;
    vertical-align: middle;

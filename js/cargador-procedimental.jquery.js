@@ -1,8 +1,6 @@
 ;(function($, window, undefined){
-
-   $.fn.cargador = function(ini, porc, bord, rell, txt, time){
-      var enProceso = 0;
-      var $canvas = $(this);
+   'use strict';
+   $.fn.cargador = function(ini, porc, bord, rell, txt, url, time){
       return this.each(function(){
          var $lienzo = $(this),
          lienzo = $lienzo[0];
@@ -10,30 +8,30 @@
             var ctx = lienzo.getContext('2d'),
             alto = lienzo.height,
             ancho = lienzo.width;
+            var animacion = false;
             var img = new Image(100, 100);
-            img.src = 'img/html5.png';
+            img.src = url;
             img.onload = function(){
                ctx.drawImage(img, ancho/2 - 50, 170);
             }
             $('a').on('click',function(e){
                e.preventDefault();
-               enProceso++;
-               if(enProceso <= $canvas.length){
+               if(!animacion){
+                  animacion = true;
                   carga(ini, porc);
                }
-               console.log(enProceso);
             });
          }
-         enProceso = 0;//falta actualizar este valor para volver a empezar la funcion
          function carga(ini, porc){
-            setInterval(function(){
+            var ciclo = setInterval(function(){
                if(ini <= porc){
                   dib_cir(ini);
                   ini++;
                }else{
-                  return false;
+                  clearInterval(ciclo);
+                  animacion = false;
                }
-            },time);
+            },time/porc);
          }
          function dib_cir(porc){
             ctx.clearRect(0, 0, ancho, alto);
@@ -46,8 +44,8 @@
             ctx.arc(ancho/2,80,75,(Math.PI/-2),(Math.PI/180*ang)-(Math.PI/2));
             ctx.arc(ancho/2,80,10,(Math.PI/180*ang)-(Math.PI/2),(Math.PI/-2));
             //izquierda a derecha
-            /*ctx.arc(100,100,75,(Math.PI/-2),(Math.PI/-2)+(Math.PI/180*-ang),true);
-            ctx.arc(100,100,10,(Math.PI/-2)+(Math.PI/180*-ang),(Math.PI/-2),true);*/
+            /*ctx.arc(100,80,75,(Math.PI/-2),(Math.PI/-2)+(Math.PI/180*-ang),true);
+            ctx.arc(100,80,10,(Math.PI/-2)+(Math.PI/180*-ang),(Math.PI/-2),true);*/
             ctx.closePath();
             ctx.fill();
             //ciculo medio

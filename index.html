@@ -12,15 +12,10 @@
       <h1>Ejemplo de cargador</h1>
       <h2>Click en cualquier parte de la pantalla</h2>
       <a href="#">INICIAR CARGA</a>
-      <canvas id="lienzo1" height="300" width="300">
-         <h3>¡Tu navegador no soporta canvas, algo penoso pues no disfrutas del verdadero potencial de la web al 100%, que esperas actualiza tu navegador a su versión más reciente!</h3>
-      </canvas>
-      <canvas id="lienzo2" height="300" width="300">
-         <h3>¡Tu navegador no soporta canvas, algo penoso pues no disfrutas del verdadero potencial de la web al 100%, que esperas actualiza tu navegador a su versión más reciente!</h3>
-      </canvas>
-      <canvas id="lienzo3" height="300" width="300">
-         <h3>¡Tu navegador no soporta canvas, algo penoso pues no disfrutas del verdadero potencial de la web al 100%, que esperas actualiza tu navegador a su versión más reciente!</h3>
-      </canvas>
+      <canvas id="html5" height="300" width="200"></canvas>
+      <canvas id="css3" height="300" width="200"></canvas>
+      <canvas id="javascript" height="300" width="200"></canvas>
+      <canvas id="ajax" height="300" width="200"></canvas>
    </div>
 <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -28,7 +23,10 @@
 <script src="js/cargador-procedimental.jquery.js"></script>
 <script>
    //testeo
-   $('canvas').cargador(0, 95, '#e54d26', '#f0f0f0', '#666', 10);
+   $('#html5').cargador(0, 25, '#e54d26', '#f0f0f0', '#666', 'img/html5.png', 1000);
+   $('#css3').cargador(0, 50, '#e54d26', '#f0f0f0', '#666', 'img/css3.png', 1000);
+   $('#javascript').cargador(0, 75, '#e54d26', '#f0f0f0', '#666', 'img/javascript.png', 1000);
+   $('#ajax').cargador(0, 100, '#e54d26', '#f0f0f0', '#666', 'img/ajax.png', 1000);
    /*$('a').on('click',function(){$(this).slideUp()});*/
 </script>
 </body>
